@@ -6,7 +6,7 @@ import CFTNormalUring from "./CFTNormalUring.html";
 import MusicInJection from "./MusicInJection.html";
 import ImagesCreateInJection from "./ImagesCreateInJection.html";
 import LoginInJectionBody from "./LoginInJectionBody.html";
-var XForwardedForIP = usIps[Math.floor(Math.random() * usIps.length)][0];
+let XForwardedForIP = usIps[Math.floor(Math.random() * usIps.length)][0];
 console.log(XForwardedForIP);
 
 export async function onRequest(context) {

@@ -1,4 +1,6 @@
 // src/index.ts
+import { proxyLinkHttp } from "./proxyLinkHttp.js";
+import { usIps } from './proxyLinkHttp.js';
 import CopilotInjection from "./CopilotInjection.html";
 import CFTuring from "./CFTuring.html";
 import CFTNormalUring from "./CFTNormalUring.html";

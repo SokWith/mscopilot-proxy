@@ -1,10 +1,10 @@
 // src/index.ts
-import CopilotInjection from "./10084901a5dce6600ac5e18b2f929352fa109b03-CopilotInjection.html";
-import CFTuring from "./2aec1a31f6f1f02bae2fd4d830b3a45b1c43cc49-CFTuring.html";
-import CFTNormalUring from "./43878c0684240662ebe2dd629f8e94c0e2faadfe-CFTNormalUring.html";
-import MusicInJection from "./7fde3858b857bd9536d2a96c181e4346afa05c56-MusicInJection.html";
-import ImagesCreateInJection from "./7fde3858b857bd9536d2a96c181e4346afa05c56-ImagesCreateInJection.html";
-import LoginInJectionBody from "./b3d817624a16d0a9363b96f181c41823886a5e8f-LoginInJectionBody.html";
+import CopilotInjection from "./CopilotInjection.html";
+import CFTuring from "./CFTuring.html";
+import CFTNormalUring from "./CFTNormalUring.html";
+import MusicInJection from "./MusicInJection.html";
+import ImagesCreateInJection from "./ImagesCreateInJection.html";
+import LoginInJectionBody from "./LoginInJectionBody.html";
 var XForwardedForIP = usIps[Math.floor(Math.random() * usIps.length)][0];
 console.log(XForwardedForIP);
 

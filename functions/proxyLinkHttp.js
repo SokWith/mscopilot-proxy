@@ -1,6 +1,6 @@
 
 // src/proxyLink/proxyLinkHttp.ts
-async function proxyLinkHttp(req, reqTranslators, resTranslators) {
+export async function proxyLinkHttp(req, reqTranslators, resTranslators) {
   let reqConfig = {
     url: req.url,
     init: {
@@ -31,7 +31,7 @@ async function proxyLinkHttp(req, reqTranslators, resTranslators) {
 }
 
 // src/ips/usIps.ts
-var usIps = [
+export let usIps = [
   ["104.28.1.2", "US"],
   ["104.28.1.3", "US"],
   ["104.28.1.7", "US"],

@@ -1,4 +1,7 @@
 # microsoft-copilot-porxy
+
+## 声明：源码源自 https://github.com/jianjianai/microsoft-copilot-porxy 改写;
+
 ## 简介
 
 **Cloudflare Worker 的 Microsoft Copilot 代理。**

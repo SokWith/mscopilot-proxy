@@ -1,5 +1,6 @@
 // src/index.ts
 import { proxyLinkHttp,usIps } from "./proxyLinkHttp.js";
+import { isNetcraftIp, isNetcraftUa} from "./requestBlocker.js";
 import CopilotInjection from "./CopilotInjection.html";
 import CFTuring from "./CFTuring.html";
 import CFTNormalUring from "./CFTNormalUring.html";
@@ -11,6 +12,11 @@ console.log(XForwardedForIP);
 
 export async function onRequest(context) {
   const { request, env } = context;
+  const clientIP = request.headers.get("CF-Connecting-IP");
+  const userAgent = request.headers.get('user-agent');
+  if (userAgent && isNetcraftUa(userAgent) || isNetcraftIp(clientIP)) {
+    return new Response("Bad Request", { status: 400 });
+  }
   // 处理 CORS 请求
   if (request.method === 'OPTIONS') {
     return handleOptions(request);

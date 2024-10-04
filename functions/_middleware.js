@@ -241,7 +241,7 @@ async function handleRequest(request, env,ctx) {
         }
         if (resUrl.pathname == "/") {
           retBody = retBody.replace(/https?:\/\/studiostaticassetspr\.azureedge\.net(:[0-9]{1,6})?/g, `${porxyOrigin}`);
-      //    retBody = injectionHtmlToHead(retBody, CopilotInjection);
+          retBody = injectionHtmlToHead(retBody, CopilotInjection);
         }
         if (resUrl.pathname == "/turing/captcha/challenge") {
           retBody = retBody.replaceAll("https://challenges.cloudflare.com", `${porxyOrigin}`);

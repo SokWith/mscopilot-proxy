@@ -1,30 +1,36 @@
 <script>
-    //验证通过器
-
-    
+    // 验证通过器
     window.myCFLocation = new Proxy(location, {
         get(target, property) {
             console.log("get", property);
             if (property == "href") {
                 let url = new URL(location.href);
-                url.protocol = "https:"
+                url.protocol = "https:";
                 url.port = "";
-                url.hostname = "www.bing.com"
+                url.hostname = "www.bing.com";
                 return url.toString();
             }
             if (property == "origin") {
                 let url = new URL(location.origin);
-                url.protocol = "https:"
+                url.protocol = "https:";
                 url.port = "";
-                url.hostname = "www.bing.com"
+                url.hostname = "www.bing.com";
                 return url.toString();
             }
             if (property == "host" || property == "hostname") {
-                return "www.bing.com"
+                return "www.bing.com";
             }
             return location[property];
         }
     });
-    document.myCFLocation =  window.myCFLocation;
+    document.myCFLocation = window.myCFLocation;
     console.log("注入成功！");
+
+    // 替换 script 标签中的 src 属性
+    const scripts = document.getElementsByTagName('script');
+    for (let script of scripts) {
+        if (script.src.includes('https://studiostaticassetsprod.azureedge.net')) {
+            script.src = script.src.replace('https://studiostaticassetsprod.azureedge.net', location.origin);
+        }
+    }
 </script>

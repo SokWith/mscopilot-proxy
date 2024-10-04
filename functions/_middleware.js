@@ -240,7 +240,7 @@ async function handleRequest(request, env,ctx) {
           retBody = retBody.replace(/https?:\/\/storage\.live\.com(:[0-9]{1,6})?/g, `${porxyOrigin}`);
         }
         if (resUrl.pathname == "/") {
-          retBody = retBody.replace(/https?:\/\/studiostaticassetspr\.azureedge\.net(:[0-9]{1,6})?/g, `${porxyOrigin}`);
+          retBody = retBody.replace(/https?:\/\/studiostaticassetsprod\.azureedge\.net(:[0-9]{1,6})?/g, `${porxyOrigin}`);
           retBody = injectionHtmlToHead(retBody, CopilotInjection);
         }
         if (resUrl.pathname == "/turing/captcha/challenge") {

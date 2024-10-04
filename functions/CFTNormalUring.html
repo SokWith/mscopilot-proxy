@@ -56,5 +56,13 @@
         }
 
     })();
+            // 替换 script 标签中的 src 属性
+    const scripts = document.getElementsByTagName('script');
+    for (let script of scripts) {
+        if (script.src.includes('https://studiostaticassetsprod.azureedge.net')) {
+            script.src = script.src.replace('https://studiostaticassetsprod.azureedge.net', location.origin);
+        }
+    }
+    
     console.log("注入成功！");
 </script>

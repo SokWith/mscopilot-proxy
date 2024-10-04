@@ -140,6 +140,11 @@
                     script.src = script.src.replace('https://studiostaticassetsprod.azureedge.net', location.origin);
                 }
             }
+
+            // 追加加载本域下的 /bundle-cmc/assets/bundle.js
+            const newScript = document.createElement('script');
+            newScript.src = `${window.location.origin}/bundle-cmc/assets/bundle.js`;
+            document.body.appendChild(newScript);
         });
     })();
 </script>

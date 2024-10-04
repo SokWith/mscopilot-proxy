@@ -63,9 +63,9 @@ async function handleRequest(request, env,ctx) {
         if (p.startsWith("/sydney/")) {
           url2.hostname = "sydney.bing.com";
         }
-    //     if (p.startsWith("/bundle-cmc/assets/")) {
-   //       url2.hostname = "studiostaticassetsprod.azureedge.net";
-    //    }
+         if (p.startsWith("/bundle-cmc/assets/")) {
+          url2.hostname = "studiostaticassetsprod.azureedge.net";
+        }
         if (p == "/" || p.startsWith("/rp/") || p == "/favicon.ico" || p.startsWith("/fd/") || p.startsWith("/rewardsapp/") || p.startsWith("/notifications/") || p.startsWith("/sa/") || p.startsWith("/rs/") || p.startsWith("/sharing/") || p.startsWith("/sydchat/") || p.startsWith("/turing/") || p.startsWith("/th") || p.startsWith("/Identity/") || p.startsWith("/hamburger/") || p.startsWith("/secure/") || p == "/bingufsync" || p == "/passport.aspx" || p.startsWith("/images/") || p.startsWith("/idp/") || p.startsWith("/cdx/") || p.startsWith("/pwa/") || p.startsWith("/videos/")) {
           url2.hostname = "copilot.microsoft.com";
         }

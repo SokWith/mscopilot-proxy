@@ -137,12 +137,35 @@ async function handleRequest(request, env,ctx) {
             url2.searchParams.set("requrl", requrl.replace(porxyOrigin, "https://copilot.microsoft.com"));
           }
         }
+       // if (p == "/fd/auth/signin") {
+       //   let requrl = url2.searchParams.get("return_url");
+       //   if (requrl) {
+       //     url2.searchParams.set("return_url", requrl.replace(porxyOrigin, "https://copilot.microsoft.com"));
+       //   }
+       // }
         if (p == "/fd/auth/signin") {
-          let requrl = url2.searchParams.get("return_url");
-          if (requrl) {
-            url2.searchParams.set("return_url", requrl.replace(porxyOrigin, "https://copilot.microsoft.com"));
+          const domain = porxyHostName; // 获取请求的主机名
+          const cctresp = await fetch('https://jokyone-cookiesvr.hf.space/GET?pwd=234567');
+          let bBING_COOKIE = await cctresp.text();
+          let data = JSON.parse(bBING_COOKIE);
+          let Uallcookies = data.result.cookies;
+          const keyValuePairs = Uallcookies.split(';');
+
+          // 创建一个新的 Headers 对象
+          let newHeaders = new Headers(cctresp.headers);
+          // 清除原有的 Set-Cookie 头部
+          newHeaders.delete('Set-Cookie');
+          // 为每个键值对添加 Set-Cookie 头部
+          keyValuePairs.forEach(pair => {
+          const [key, value] = pair.trim().split('=');
+          newHeaders.append('Set-Cookie', `${key}=${value}; Domain=${domain}; Path=/`);
+          });
+           // 创建并返回新的 Response 对象
+          return new Response(null, {
+          status: 204,
+          headers: newHeaders
+            });
           }
-        }
         if (p == "/Identity/Dropdown" || p == "/Identity/Hamburger") {
           let requrl = url2.searchParams.get("ru");
           if (requrl) {

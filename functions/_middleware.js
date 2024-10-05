@@ -226,9 +226,10 @@ async function handleRequest(request, env,ctx) {
       async (config, res) => {
         const resHeaders = config.init.headers;
         const contentType = res.headers.get("Content-Type");
-        if (!contentType || !contentType.startsWith("text/") && !contentType.startsWith("application/javascript") && !contentType.startsWith("application/json")) {
+        if (!contentType || !contentType.startsWith("text/") && !contentType.startsWith("application/javascript") && !contentType.startsWith("application/x-javascript") && !contentType.startsWith("application/json")) {
           return config;
-        }
+          }
+
         resHeaders.delete("Content-Md5");
         let retBody = await res.text();
         const resUrl = new URL(res.url);

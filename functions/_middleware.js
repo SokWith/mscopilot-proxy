@@ -63,6 +63,10 @@ async function handleRequest(request, env,ctx) {
         if (p.startsWith("/sydney/")) {
           url2.hostname = "sydney.bing.com";
         }
+         if (p == "/c/api/chat" ) {
+           p = "/sydney/ChatHub";
+          url2.hostname = "sydney.bing.com";
+        }
          if (p.startsWith("/bundle-cmc/")) {
           url2.hostname = "studiostaticassetsprod.azureedge.net";
         }

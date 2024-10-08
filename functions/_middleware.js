@@ -64,7 +64,7 @@ async function handleRequest(request, env,ctx) {
           url2.hostname = "sydney.bing.com";
         }
          if (p == "/c/api/chat" ) {
-           p = "/sydney/ChatHub";
+           url2.pathname = "/sydney/ChatHub";
           url2.hostname = "sydney.bing.com";
         }
          if (p.startsWith("/bundle-cmc/")) {

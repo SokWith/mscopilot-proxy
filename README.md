@@ -6,3 +6,4 @@
 ### 幸运的是，目前还是很弱的ip验证方式，只要不是大的CDN的ip，都不激活人机验证。
 
 ## Bing目前还是cct认证，姊妹篇： [https://bi1.pages.dev](https://bi1.pages.dev/chat?q=Microsoft+Copilot&FORM=hpcodx)
+### Bing官网也已跳转Copilot了，NewBing即将谢幕！

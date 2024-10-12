@@ -6,5 +6,5 @@
 ### 尝试更换ip，似乎也难以规避：
 -    IP地址检查： https://jiome-ip.hf.space/
 
-## Bing目前还是cct认证，姊妹篇： [https://bi1.pages.dev](https://bi1.pages.dev/chat?q=Microsoft+Copilot&FORM=hpcodx)
+## ~~Bing目前还是cct认证，姊妹篇： [https://bi1.pages.dev](https://bi1.pages.dev/chat?q=Microsoft+Copilot&FORM=hpcodx)~~
 ### Bing官网也已跳转Copilot了，NewBing即将谢幕！

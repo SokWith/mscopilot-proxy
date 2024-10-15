@@ -8,3 +8,4 @@
 
 ## ~~Bing目前还是cct认证，姊妹篇： [https://bi1.pages.dev](https://bi1.pages.dev/chat?q=Microsoft+Copilot&FORM=hpcodx)~~
 ### Bing官网也已跳转Copilot了，NewBing即将谢幕！
+![image](https://github.com/user-attachments/assets/2073028d-3901-4713-a990-9a22ae781c1c)

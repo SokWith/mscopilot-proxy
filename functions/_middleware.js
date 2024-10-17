@@ -261,7 +261,7 @@ async function handleRequest(request, env,ctx) {
         let retBody = await res.text();
         const resUrl = new URL(res.url);
         
-        retBody = retBody.replace(/copilot\.microsoft\.com:9980\/copilot/g, `www.bing.com/search?q=Microsoft+Copilot&amp;FORM=hpcodx&amp;showconv=1&amp;showconv=1`);
+        retBody = retBody.replace(/copilot\.microsoft\.com:9980\/copilot/g, "www.bing.com/search?q=Microsoft+Copilot&amp;FORM=hpcodx&amp;showconv=1&amp;showconv=1");
         
         if (!resUrl.pathname.startsWith("/turing/") && !resUrl.pathname.startsWith("/turnstile/") && !resUrl.pathname.startsWith("/cdn-cgi/")) {
           retBody = retBody.replace(/https?:\/\/sydney\.bing\.com(:[0-9]{1,6})?/g, `${porxyOrigin}`);

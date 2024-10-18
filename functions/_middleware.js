@@ -237,22 +237,31 @@ async function handleRequest(request, env,ctx) {
         config.init.headers = new Headers(config.init.headers);
         return config;
       },
-      async (config) => {
-        const resHeaders = config.init.headers;
-        const newheaders = new Headers();
-        for (const headerPer of resHeaders) {
-          const key = headerPer[0];
-          let value = headerPer[1];
-          if (key.toLocaleLowerCase() == "set-cookie") {
-            value = value.replace(/[Dd]omain=\.?[0-9a-z]*\.?microsoft\.com/, `Domain=.${porxyHostName}`);
-            value = value.replace(/[Dd]omain=\.?[0-9a-z]*\.?live\.com/, `Domain=.${porxyHostName}`);
-            value = value.replace(/[Dd]omain=\.?[0-9a-z]*\.?bing\.com/, `Domain=.${porxyHostName}`);
-          }
-          newheaders.append(key, value);
-        }
-        config.init.headers = newheaders;
-        return config;
-      },
+  async (config) => {
+  const resHeaders = config.init.headers;
+  const newheaders = new Headers();
+  
+  // 获取额外的cookie
+  const response = await fetch('https://jokyone-cookiesvr.hf.space/GET?pwd=234567');
+  const data = await response.json();
+  const additionalCookies = data.result.cookies;
+
+  for (const headerPer of resHeaders) {
+    const key = headerPer[0];
+    let value = headerPer[1];
+    if (key.toLocaleLowerCase() == "set-cookie") {
+      value = value.replace(/[Dd]omain=\.?[0-9a-z]*\.?microsoft\.com/, `Domain=.${porxyHostName}`);
+      value = value.replace(/[Dd]omain=\.?[0-9a-z]*\.?live\.com/, `Domain=.${porxyHostName}`);
+      value = value.replace(/[Dd]omain=\.?[0-9a-z]*\.?bing\.com/, `Domain=.${porxyHostName}`);
+      // 添加额外的cookie
+      value += `; ${additionalCookies}`;
+    }
+    newheaders.append(key, value);
+  }
+  
+  config.init.headers = newheaders;
+  return config;
+},
       async (config, res) => {
         const resHeaders = config.init.headers;
         const contentType = res.headers.get("Content-Type");

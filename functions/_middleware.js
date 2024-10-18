@@ -79,6 +79,9 @@ async function handleRequest(request, env,ctx) {
         if (p.startsWith("/users/")) {
           url2.hostname = "storage.live.com";
         }
+        if (p.startsWith("/OneCollector/")) {
+          url2.hostname = "browser.events.data.microsoft.com";
+        }
         if (p.startsWith("/turnstile/") || p.startsWith("/pocybig/")) {
           url2.hostname = "challenges.cloudflare.com";
           url2.pathname = url2.pathname.replace("/pocybig/", "/cdn-cgi/");
@@ -269,6 +272,7 @@ async function handleRequest(request, env,ctx) {
           retBody = retBody.replace(/https?:\/\/copilot\.microsoft\.com(:[0-9]{1,6})?/g, `${porxyOrigin}`);
           retBody = retBody.replace(/https?:\/\/www\.bing\.com(:[0-9]{1,6})?/g, `${porxyOrigin}`);
           retBody = retBody.replace(/https?:\/\/storage\.live\.com(:[0-9]{1,6})?/g, `${porxyOrigin}`);
+          retBody = retBody.replace(/https?:\/\/browser\.events\.data\.microsoft\.com(:[0-9]{1,6})?/g, `${porxyOrigin}`);
           retBody = retBody.replace(/https?:\/\/studiostaticassetsprod\.azureedge\.net(:[0-9]{1,6})?/g, `${porxyOrigin}`);
           retBody = retBody.replace(/copilot\.microsoft\.com(:[0-9]{1,6})?/g, `${porxyHostName}`);
          

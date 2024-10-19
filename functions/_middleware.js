@@ -238,7 +238,7 @@ async function handleRequest(request, env,ctx) {
         return config;
       },
       
-  async (config) => {
+ async (config) => {
   const resHeaders = config.init.headers;
   const newheaders = new Headers();
   
@@ -254,18 +254,21 @@ async function handleRequest(request, env,ctx) {
       value = value.replace(/[Dd]omain=\.?[0-9a-z]*\.?microsoft\.com/, `Domain=.${porxyHostName}`);
       value = value.replace(/[Dd]omain=\.?[0-9a-z]*\.?live\.com/, `Domain=.${porxyHostName}`);
       value = value.replace(/[Dd]omain=\.?[0-9a-z]*\.?bing\.com/, `Domain=.${porxyHostName}`);
+      newheaders.append(key, value);
+    } else {
+      newheaders.append(key, value);
     }
-    newheaders.append(key, value);
   }
 
-  // 单独设置额外的cookie
+  // 单独设置额外的cookie，并指定域
   additionalCookies.forEach(cookie => {
-    newheaders.append("set-cookie", cookie);
+    newheaders.append("set-cookie", `${cookie}; Domain=.${porxyHostName}`);
   });
   
   config.init.headers = newheaders;
   return config;
-}，
+},
+
 
       async (config, res) => {
         const resHeaders = config.init.headers;

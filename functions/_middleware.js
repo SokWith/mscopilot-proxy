@@ -261,9 +261,9 @@ async function handleRequest(request, env,ctx) {
   }
 
   // 单独设置额外的cookie，并指定域
-  additionalCookies.forEach(cookie => {
-    newheaders.append("set-cookie", `${cookie}; Domain=.${porxyHostName}`);
-  });
+//  additionalCookies.forEach(cookie => {
+//    newheaders.append("set-cookie", `${cookie}; Domain=.${porxyHostName}`);
+//  });
   
   config.init.headers = newheaders;
   return config;

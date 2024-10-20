@@ -310,7 +310,7 @@ async function handleRequest(request, env,ctx) {
 if (resUrl.pathname === "/c/api/start") {
   retBody = retBody.replace(
     /"features":\[[^\]]*\]/,
-    `"features":["clarity","csamplevariant","aaflight_t","daily-briefing","onboarding","gndsnippet3500","cf-turnstile","stopexp","dailybriefing","upload-image"]`
+    `"features":["clarity","csamplevariant","aaflight_t","daily-briefing","onboarding","gndsnippet3500","stopexp","dailybriefing","upload-image"]`
   );
 }
 

@@ -308,7 +308,6 @@ async function handleRequest(request, env,ctx) {
         }
 
 if (resUrl.pathname == "/c/api/start") {
-  let retBody = await res.text();
   retBody = retBody.replaceAll(
     /"features":\[[^\]]*\]/,
     `"features":["humanchallenge","clarity","csamplevariant","aaflight_t","daily-briefing","onboarding","gndsnippet3500","cf-turnstile","stopexp","dailybriefing","upload-image"]`

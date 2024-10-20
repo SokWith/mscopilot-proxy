@@ -306,6 +306,27 @@ async function handleRequest(request, env,ctx) {
         if (resUrl.pathname == "/videos/music") {
           retBody = injectionHtmlToHead(retBody, MusicInJection);
         }
+
+if (resUrl.pathname == "/c/api/start") {
+  retBody = {
+    ...retBody,
+    "features": [
+      "humanchallenge",
+      "clarity",
+      "csamplevariant",
+      "aaflight_t",
+      "daily-briefing",
+      "onboarding",
+      "gndsnippet3500",
+      "cf-turnstile",
+      "stopexp",
+      "dailybriefing",
+      "upload-image"
+    ]
+  };
+}
+
+        
         if (resUrl.pathname == "/images/create" || resUrl.pathname.startsWith("/images/create/") && !resUrl.pathname.startsWith("/images/create/async/")) {
           retBody = injectionHtmlToHead(retBody, ImagesCreateInJection);
         }

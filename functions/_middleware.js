@@ -306,14 +306,14 @@ async function handleRequest(request, env,ctx) {
         if (resUrl.pathname == "/videos/music") {
           retBody = injectionHtmlToHead(retBody, MusicInJection);
         }
-
+/*
 if (resUrl.pathname === "/c/api/start") {
   retBody = retBody.replace(
     /"features":\[[^\]]*\]/,
-    `"features":["humanchallenge","clarity","csamplevariant","aaflight_t","daily-briefing","onboarding","gndsnippet3500","stopexp","dailybriefing","upload-image"]`
+    `"features":["humanchallenge","clarity","csamplevariant","aaflight_t","daily-briefing","onboarding","gndsnippet3500","cf-turnstile","stopexp","dailybriefing","upload-image"]`
   );
 }
-
+*/
 
 
 

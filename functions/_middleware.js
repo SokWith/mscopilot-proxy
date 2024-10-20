@@ -321,7 +321,9 @@ if (resUrl.pathname == "/c/api/start") {
     "dailybriefing",
     "upload-image"
   ];
+  retBody = JSON.stringify(retBody);
 }
+
 
 
         

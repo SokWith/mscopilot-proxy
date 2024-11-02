@@ -3,7 +3,8 @@
 ##### 声明：源码源自 https://github.com/jianjianai/microsoft-copilot-porxy 改写;
 
 ## 这个反向代理基本上是不能够直接使用了。
-### 但是可以作为一些简易正向代理的后端使用，比如whistle。
+# copilot 似乎上墙了，对双面墙，唯有科学
+### ~~但是可以作为一些简易正向代理的后端使用，比如whistle。~~
 -  将 copilot.microsoft.com/c 代理到这个部署即可
 -  ![image](https://github.com/user-attachments/assets/dbe462cd-4569-40e1-ac9d-aa2bcae57ff3)
 

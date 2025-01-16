@@ -283,7 +283,8 @@ async function handleRequest(request, env,ctx) {
         
         retBody = retBody.replace(/copilot\.microsoft\.com:9980\/copilot\//g, "www.bing.com/search?q=Microsoft+Copilot&amp;FORM=hpcodx&amp;showconv=1&amp;showconv=1");
         
-        if (!resUrl.pathname.startsWith("/turing/") && !resUrl.pathname.startsWith("/turnstile/") && !resUrl.pathname.startsWith("/cdn-cgi/")) {
+       // if (!resUrl.pathname.startsWith("/turing/") && !resUrl.pathname.startsWith("/turnstile/") && !resUrl.pathname.startsWith("/cdn-cgi/")) {
+        if (!resUrl.pathname.startsWith("/turing/") && !resUrl.pathname.startsWith("/turnstile/") && !resUrl.pathname.startsWith("/cdn-cgi/") && !resUrl.pathname.startsWith("/bundle-cmc/assets/")) {
           retBody = retBody.replace(/https?:\/\/sydney\.bing\.com(:[0-9]{1,6})?/g, `${porxyOrigin}`);
           retBody = retBody.replace(/https?:\/\/login\.live\.com(:[0-9]{1,6})?/g, `${porxyOrigin}`);
           retBody = retBody.replace(/https?:\/\/copilot\.microsoft\.com(:[0-9]{1,6})?/g, `${porxyOrigin}`);

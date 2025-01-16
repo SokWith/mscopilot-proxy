@@ -5,10 +5,11 @@
 # 这个地址很奇妙：
 - ```https://copilot.microsoft.com/c/api/chat?api-version=2&features=-%2Cncedge%2Cedgepagecontext&setflight=-%2Cncedge%2Cedgepagecontext&ncedge=1```
 ## ~~这个反向代理基本上是不能够直接使用了。~~
-# ~~copilot 似乎上墙了，对双面墙，唯有科学~~
-### ~~但是可以作为一些简易正向代理的后端使用，比如whistle。~~
+
+### 但是可以作为一些简易正向代理的后端使用，比如whistle。
 -  将 copilot.microsoft.com/c 代理到这个部署即可
--  ![image](https://github.com/user-attachments/assets/dbe462cd-4569-40e1-ac9d-aa2bcae57ff3)
+-  ![image](https://github.com/user-attachments/assets/fdfa4151-4bb7-42df-9ef1-f42c2ffc27a9)
+
 
 
 ### ~~不幸的是，自24年10月起，Copilot弃用了cct认证，全面采用的CF人机验证小部件，绕过 无效域 的方法还莫如直接科学更简单；~~
